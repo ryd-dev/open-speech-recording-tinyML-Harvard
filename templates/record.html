@@ -18,17 +18,34 @@
       </header>
 
       <section class="top-display">
-	<div class="directions">
-	  Press Record to start.
-	  <br/>
-	  Record yourself saying only the word in the box below.
-	  <br/>
-	  Press Stop to stop recording, and when all the requested words are completed you'll be able to upload the recordings.
-	</div>
-	<div class="progress-display">
-	</div>
-	<div class="info-display">
-	</div>
+      	<div class="directions">
+          <ol>
+            <li>
+              Input the words you would like to record as a comma seperated list:
+              <br/>
+              <input type="text" id="input_words" value="These,are,example,words">
+            </li>
+            <br/>
+            <li>
+              Input the number of sampels of each word you would like to record: 
+              <br/>
+              <input type="text" id="input_counts" value="10">
+            </li>
+            <br/>
+            <li>
+              Press Record to start recording. And record only the word show in the box below when instructed (the record button will switch between red and grey to indicate each new recording and will randomly select words from your list to record).
+            </li>
+            <br/>
+            <li>
+              Press Stop to stop recording, and when all the requested words are completed you'll be able to download the recordings.
+            </li>
+            <br/>
+          </ul>
+        </div>
+        <div class="progress-display">
+        </div>
+        <div class="info-display">
+        </div>
       </section>
 
       <section class="main-controls">

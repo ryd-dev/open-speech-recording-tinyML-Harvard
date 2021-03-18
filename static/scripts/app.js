@@ -3,13 +3,11 @@
 //         AND FILLER WORDS YOU WANT TO RECORD //
 // --------------------------------------------//
 var COUNTS_FOR_WANTED_WORDS = 5;
-var COUNTS_FOR_FILLER_WORDS = 1;
+var COUNTS_FOR_FILLER_WORDS = 0;
 var wantedWords = [
   'Hello',
 ];
-var fillerWords = [
-  'World',
-];
+var fillerWords = [];
 // --------------------------------------------//
 
 // fork getUserMedia for multiple browser versions, for the future
@@ -48,6 +46,11 @@ if (navigator.getUserMedia) {
     mediaRecorder = new MediaRecorder(stream);
     mediaStreamSource = audioCtx.createMediaStreamSource(stream);
     record.onclick = function() {
+      // Initialize the wanted words
+      COUNTS_FOR_WANTED_WORDS = parseInt(document.getElementById("input_counts").value)
+      wantedWords = document.getElementById("input_words").value.split(",")
+
+      // Turn on the visualizer
       visualize(stream);
 
       // Display a countdown before recording starts.
