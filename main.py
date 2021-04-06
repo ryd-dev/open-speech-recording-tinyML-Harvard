@@ -34,7 +34,7 @@ def upload():
         make_response('No session', 400)
     word = request.args.get('word')
     audio_data = request.data
-    filename = word + '_' + session_id + '_' + uuid.uuid4().hex + '.ogg'
+    filename = word + '_' + session_id + uuid.uuid4().hex + '.ogg'
     secure_name = secure_filename(filename)
     with open(secure_name, 'wb') as f:
        f.write(audio_data)
